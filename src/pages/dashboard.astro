@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout>
+
+	<!-- MAIN CONTENT -->
+	<main class="main-content">
+
+		<!-- DASHBOARD CONTENT -->
+		<div class="dashboard-container">
+			
+			<div class="page-header">
+				<h1>Bienvenido de nuevo, Alex</h1>
+				<p>Aquí tienes un resumen de la actividad de hoy.</p>
+			</div>
+
+			<!-- KPI CARDS -->
+			<div class="kpi-grid">
+				<!-- Card 1 -->
+				<div class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-value">1,250€</div>
+							<div class="card-label">Ventas Totales</div>
+						</div>
+						<div class="icon-box icon-blue">
+							<i class="ph ph-currency-dollar"></i>
+						</div>
+					</div>
+					<div class="trend up">
+						<i class="ph ph-trend-up"></i>
+						<span>+12.5% vs ayer</span>
+					</div>
+				</div>
+
+				<!-- Card 2 -->
+				<div class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-value">24</div>
+							<div class="card-label">Pedidos Hoy</div>
+						</div>
+						<div class="icon-box icon-purple">
+							<i class="ph ph-shopping-bag"></i>
+						</div>
+					</div>
+					<div class="trend up">
+						<i class="ph ph-trend-up"></i>
+						<span>+4 nuevos</span>
+					</div>
+				</div>
+
+				<!-- Card 3 -->
+				<div class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-value">856</div>
+							<div class="card-label">Clientes Activos</div>
+						</div>
+						<div class="icon-box icon-green">
+							<i class="ph ph-users-three"></i>
+						</div>
+					</div>
+					<div class="trend up">
+						<i class="ph ph-trend-up"></i>
+						<span>+0.8% esta semana</span>
+					</div>
+				</div>
+
+				<!-- Card 4 -->
+				<div class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-value">5</div>
+							<div class="card-label">Pendientes</div>
+						</div>
+						<div class="icon-box icon-yellow">
+							<i class="ph ph-clock-countdown"></i>
+						</div>
+					</div>
+					<div class="trend down">
+						<i class="ph ph-warning-circle"></i>
+						<span>Requieren atención</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- RECENT ORDERS TABLE -->
+			<div class="table-section">
+				<div class="section-header">
+					<h3>Últimos Pedidos</h3>
+					<a href="#" class="btn-link">Ver todo <i class="ph-bold ph-arrow-right"></i></a>
+				</div>
+				
+				<div class="table-responsive">
+					<table>
+						<thead>
+							<tr>
+								<th>ID Pedido</th>
+								<th>Cliente</th>
+								<th>Fecha</th>
+								<th>Monto</th>
+								<th>Estado</th>
+								<th>Acción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>#ORD-7829</td>
+								<td>
+									<div class="client-cell">
+										<div class="avatar-circle">MR</div>
+										<span>Marta Rodríguez</span>
+									</div>
+								</td>
+								<td>15 Ene, 2024</td>
+								<td>125.50€</td>
+								<td><span class="status-badge status-completed">Completado</span></td>
+								<td><i class="ph ph-dots-three-vertical" style="cursor: pointer;"></i></td>
+							</tr>
+							<tr>
+								<td>#ORD-7830</td>
+								<td>
+									<div class="client-cell">
+										<div class="avatar-circle" style="background-color: #F3E8FF; color: #7E22CE;">JP</div>
+										<span>Juan Pérez</span>
+									</div>
+								</td>
+								<td>15 Ene, 2024</td>
+								<td>450.00€</td>
+								<td><span class="status-badge status-pending">Pendiente</span></td>
+								<td><i class="ph ph-dots-three-vertical" style="cursor: pointer;"></i></td>
+							</tr>
+							<tr>
+								<td>#ORD-7831</td>
+								<td>
+									<div class="client-cell">
+										<div class="avatar-circle" style="background-color: #FEF9C3; color: #854D0E;">LG</div>
+										<span>Lucía Gómez</span>
+									</div>
+								</td>
+								<td>14 Ene, 2024</td>
+								<td>89.99€</td>
+								<td><span class="status-badge status-completed">Completado</span></td>
+								<td><i class="ph ph-dots-three-vertical" style="cursor: pointer;"></i></td>
+							</tr>
+							<tr>
+								<td>#ORD-7832</td>
+								<td>
+									<div class="client-cell">
+										<div class="avatar-circle" style="background-color: #FEE2E2; color: #991B1B;">CD</div>
+										<span>Carlos Díaz</span>
+									</div>
+								</td>
+								<td>14 Ene, 2024</td>
+								<td>210.00€</td>
+								<td><span class="status-badge status-cancelled">Cancelado</span></td>
+								<td><i class="ph ph-dots-three-vertical" style="cursor: pointer;"></i></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</main>
+</Layout>
+<style is:global>
+
+	.dashboard-container { padding: 32px; flex: 1; }
+
+	.page-header { margin-bottom: 32px; }
+	.page-header h1 { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); }
+	.page-header p { color: var(--text-secondary); margin-top: 4px; }
+
+	/* KPI Cards Grid */
+	.kpi-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 24px;
+		margin-bottom: 32px;
+	}
+
+	.card {
+		background-color: var(--bg-card);
+		border-radius: var(--card-radius);
+		padding: 24px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+		border: 1px solid var(--border-color);
+		transition: var(--transition);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 16px;
+	}
+
+	.icon-box {
+		width: 48px;
+		height: 48px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+	}
+	.icon-blue { background-color: var(--primary-light); color: var(--primary); }
+	.icon-green { background-color: var(--success-bg); color: var(--success-text); }
+	.icon-yellow { background-color: var(--warning-bg); color: var(--warning-text); }
+	.icon-purple { background-color: #F3E8FF; color: #7E22CE; }
+
+	.card-value { font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; }
+	.card-label { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
+
+	.trend {
+		font-size: 0.8rem;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+	.trend.up { color: var(--success-text); }
+	.trend.down { color: var(--danger-text); }
+
+	/* Sección de Tabla Específica */
+	.table-section {
+		background-color: var(--bg-card);
+		border-radius: var(--card-radius);
+		border: 1px solid var(--border-color);
+		box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+		overflow: hidden;
+	}
+	.section-header {
+		padding: 20px 24px;
+		border-bottom: 1px solid var(--border-color);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.section-header h3 { font-size: 1.1rem; font-weight: 600; }
+
+	.client-cell { display: flex; align-items: center; gap: 12px; }
+
+	/* Responsive Específico del Contenido Dashboard */
+	@media (max-width: 480px) {
+		.header-actions { gap: 10px; }
+		.search-bar { display: none; }
+		.kpi-grid { grid-template-columns: 1fr; }
+		.card-value { font-size: 1.5rem; }
+		th, td { padding: 12px 16px; }
+	}
+</style>

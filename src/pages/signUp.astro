@@ -2,18 +2,27 @@
 import FormLabel from "@components/auth/FormLabel.astro";
 import LoginLayout from "@layouts/LoginLayout.astro";
 ---
-<LoginLayout title="Iniciar Sesión - Nexus ERP">
-    <!-- Header Logo -->
+
+<LoginLayout title="Registro - Nexus ERP">
+
     <div class="auth-header">
         <div class="brand-logo">
             <i class="ph-bold ph-hexagon"></i>
         </div>
-        <h1>Bienvenido</h1>
-        <p>Ingresa tus credenciales para acceder a Nexus ERP</p>
+        <h1>Crear Cuenta</h1>
+        <p>Regístrate para acceder a Nexus ERP</p>
     </div>
 
-    <form action="dashboard.html"> 
+    <form action="/dashboard"> 
         
+        <FormLabel 
+            title="Nombre Completo" 
+            icon="ph-user" 
+            type="text" 
+            placeHolder="Tu nombre completo"
+            required={true}
+        />
+
         <FormLabel 
             title="Correo Electrónico" 
             icon="ph-envelope-simple" 
@@ -30,20 +39,22 @@ import LoginLayout from "@layouts/LoginLayout.astro";
             required={true}
         />
 
-        <div class="form-options">
-            <label class="remember-me">
-                <input type="checkbox">
-                <span>Recordarme</span>
-            </label>
-            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-        </div>
+        <FormLabel 
+            title="Confirmar Contraseña" 
+            icon="ph-lock-key" 
+            type="password" 
+            placeHolder="••••••••"
+            required={true}
+        />
 
         <button type="submit" class="btn-primary">
-            Iniciar Sesión
+            Crear Cuenta
         </button>
+        
     </form>
 
     <div class="auth-footer">
-        <p>¿No tienes una cuenta? <a href="/signUp">Crear Cuenta</a></p>
+        <p>¿Ya tienes una cuenta? <a href="/">Iniciar Sesión</a></p>
     </div>
+
 </LoginLayout>
