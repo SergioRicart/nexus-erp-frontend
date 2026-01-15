@@ -1,5 +1,5 @@
 ---
-const { title, icon, type, placeHolder, required } = Astro.props;
+const { title, name, icon, type, placeHolder, required } = Astro.props;
 ---
 
 <div class="form-group">
@@ -9,6 +9,7 @@ const { title, icon, type, placeHolder, required } = Astro.props;
         <input 
             type={type} 
             id={title} 
+            name={name}
             class="form-input" 
             placeholder={placeHolder} 
             required={required} 

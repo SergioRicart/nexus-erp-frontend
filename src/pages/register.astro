@@ -13,10 +13,11 @@ import LoginLayout from "@layouts/LoginLayout.astro";
         <p>Regístrate para acceder a Nexus ERP</p>
     </div>
 
-    <form action="/dashboard"> 
+    <form method="POST" class="auth-form"> 
         
         <FormLabel 
-            title="Nombre Completo" 
+            title="Nombre Completo"
+            name="fullName" 
             icon="ph-user" 
             type="text" 
             placeHolder="Tu nombre completo"
@@ -25,6 +26,7 @@ import LoginLayout from "@layouts/LoginLayout.astro";
 
         <FormLabel 
             title="Correo Electrónico" 
+            name="email"
             icon="ph-envelope-simple" 
             type="email" 
             placeHolder="nombre@empresa.com"
@@ -33,6 +35,7 @@ import LoginLayout from "@layouts/LoginLayout.astro";
 
         <FormLabel 
             title="Contraseña" 
+            name="password"
             icon="ph-lock-key" 
             type="password" 
             placeHolder="••••••••"
@@ -41,6 +44,7 @@ import LoginLayout from "@layouts/LoginLayout.astro";
 
         <FormLabel 
             title="Confirmar Contraseña" 
+            name="confirmPassword"
             icon="ph-lock-key" 
             type="password" 
             placeHolder="••••••••"
@@ -58,3 +62,6 @@ import LoginLayout from "@layouts/LoginLayout.astro";
     </div>
 
 </LoginLayout>
+
+<script type="module" src="/src/scripts/register"></script>
+
