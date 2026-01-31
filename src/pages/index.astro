@@ -3,7 +3,7 @@ import FormLabel from "@components/auth/FormLabel.astro";
 import LoginLayout from "@layouts/LoginLayout.astro";
 ---
 <LoginLayout title="Iniciar Sesión - Nexus ERP">
-    <!-- Header Logo -->
+
     <div class="auth-header">
         <div class="brand-logo">
             <i class="ph-bold ph-hexagon"></i>
@@ -12,12 +12,13 @@ import LoginLayout from "@layouts/LoginLayout.astro";
         <p>Ingresa tus credenciales para acceder a Nexus ERP</p>
     </div>
 
-    <form action="dashboard.html"> 
+    <form method="POST" class="auth-form"> 
         
         <FormLabel 
             title="Correo Electrónico" 
             icon="ph-envelope-simple" 
             type="email" 
+            name="email"
             placeHolder="nombre@empresa.com"
             required={true}
         />
@@ -26,6 +27,7 @@ import LoginLayout from "@layouts/LoginLayout.astro";
             title="Contraseña" 
             icon="ph-lock-key" 
             type="password" 
+            name="password"
             placeHolder="••••••••"
             required={true}
         />
@@ -47,3 +49,6 @@ import LoginLayout from "@layouts/LoginLayout.astro";
         <p>¿No tienes una cuenta? <a href="/register">Crear Cuenta</a></p>
     </div>
 </LoginLayout>
+
+
+<script type="module" src="/src/scripts/login"></script>

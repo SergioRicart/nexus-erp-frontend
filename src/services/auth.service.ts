@@ -25,3 +25,17 @@ export async function registerUser(data: {
 
     return response.json();
 }
+
+export async function loginUser(email: string, password: string) {
+
+    const response = await fetch(`${API_URL}/users/login/${email}/`, {
+        method: "POST",
+    });
+    
+    if (!response.ok) {
+        const error = await response.text();
+        throw new Error(error);
+    }
+
+    return response.json();
+}
